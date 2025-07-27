@@ -79,9 +79,9 @@ const App = () => {
       <div className="wrapper">
         <header>
           <img src="hero.webp" alt="" className=" w-[300px] sm:w-2xl " />
-          <h1 className="uppercase leading-none cursor-pointer">
-            find <span className="text-gradient">movies</span> you like with
-            ease
+          <h1 className="uppercase leading-none cursor-pointer mt-8">
+            Discover your next{" "}
+            <span className="text-gradient">favorite movie</span> with ease
           </h1>
 
           {trendingMovies.length > 0 && (
