@@ -26,8 +26,8 @@ const App = () => {
 
   useDebounce(() => setdebounceSearchTerm(searchTerm), [500]);
 
-  const trendImage = (url) => {
-    return !errorTrendLoading ? url : "no-movie.png";
+  const trendImage = (movieId, url) => {
+    return !errorTrendLoading[movieId] ? url : "no-movie.png";
   };
 
   const fetchMovies = async (query = "") => {
@@ -106,7 +106,7 @@ const App = () => {
                         </div>
                       )}
                       <img
-                        src={trendImage(movies.poster_url)}
+                        src={trendImage(movies.$id, movies.poster_url)}
                         alt=""
                         onLoad={() => settrendLoading(false)}
                         onError={() => {
