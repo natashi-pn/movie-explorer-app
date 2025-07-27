@@ -78,7 +78,7 @@ const App = () => {
       <div className="pattern"></div>
       <div className="wrapper">
         <header>
-          <img src="public/hero.webp" alt="" className="w-sm sm:w-md" />
+          <img src="/hero.webp" alt="" className="w-sm sm:w-md" />
           <h1 className="uppercase leading-none cursor-pointer">
             find <span className="text-gradient">movies</span> you like with
             ease
