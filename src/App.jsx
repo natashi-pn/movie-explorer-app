@@ -74,11 +74,11 @@ const App = () => {
   }, [debounceSearchTerm]);
 
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <div className="pattern"></div>
       <div className="wrapper">
         <header>
-          <img src="/hero.webp" alt="" className="w-sm sm:w-md" />
+          <img src="hero.webp" alt="" className=" w-[300px] sm:w-2xl " />
           <h1 className="uppercase leading-none cursor-pointer">
             find <span className="text-gradient">movies</span> you like with
             ease

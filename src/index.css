@@ -33,7 +33,7 @@ body {
 
   --breakpoint-xs: 480px;
 
-  --background-image-hero-pattern: url("/hero-bg.png");
+  --background-image-hero-pattern: url("hero-bg.png");
 }
 
 @layer base {
@@ -56,7 +56,7 @@ body {
   }
 
   header {
-    @apply sm:mt-10 mt-5;
+    @apply sm:mt-5 mt-0;
   }
 
   header img {
