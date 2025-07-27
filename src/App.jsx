@@ -21,8 +21,15 @@ const App = () => {
   const [movieList, setmovieList] = useState([]);
   const [debounceSearchTerm, setdebounceSearchTerm] = useState("");
   const [trendingMovies, setTrendingMovies] = useState([]);
+  const [trendLoading, settrendLoading] = useState(true);
+  const [errorTrendLoading, seterrorTrendLoading] = useState(false);
 
   useDebounce(() => setdebounceSearchTerm(searchTerm), [500]);
+
+  const trendImage = (url) => {
+    return !errorTrendLoading ? url : "no-movie.png";
+  };
+
   const fetchMovies = async (query = "") => {
     setisLoading(true);
 
@@ -88,12 +95,24 @@ const App = () => {
             <section className="trending">
               <h2 className="uppercase">trending movies</h2>
 
-              <ul>
+              <ul className="mt-10">
                 {trendingMovies.map((movies, index) => {
                   return (
-                    <li key={movies.$id}>
+                    <li key={movies.$id} className="relative">
                       <p>{index + 1}</p>
-                      <img src={movies.poster_url} alt="" />
+                      {trendLoading && (
+                        <div className="w-full h-full bg-dark-100 absolute z-99 top-0 left-0 flex justify-center items-center">
+                          <Spinner />
+                        </div>
+                      )}
+                      <img
+                        src={trendImage(movies.poster_url)}
+                        alt=""
+                        onLoad={() => settrendLoading(false)}
+                        onError={() => {
+                          settrendLoading(false), seterrorTrendLoading(true);
+                        }}
+                      />
                     </li>
                   );
                 })}

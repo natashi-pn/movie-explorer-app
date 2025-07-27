@@ -74,7 +74,7 @@ body {
   }
 
   .trending {
-    @apply mt-15;
+    @apply mt-15 w-screen;
 
     & ul {
       @apply flex flex-row overflow-y-auto gap-5 -mt-10 w-full;
