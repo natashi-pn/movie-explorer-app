@@ -10,7 +10,7 @@ const MovieCard = ({
   const imageSrc =
     poster_path && !isImageLoaded
       ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-      : "/no-movie.png";
+      : "no-movie.png";
 
   return (
     <div className="movie-card relative p-3">
