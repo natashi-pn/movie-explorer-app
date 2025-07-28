@@ -93,9 +93,9 @@ const App = () => {
 
           {trendingMovies.length > 0 && (
             <section className="trending">
-              <h2 className="uppercase">trending movies</h2>
+              <h2 className="uppercase my-1">trending movies</h2>
 
-              <ul className="mt-10">
+              <ul>
                 {trendingMovies.map((movie, index) => {
                   return (
                     <li key={movie.$id} className="relative">
